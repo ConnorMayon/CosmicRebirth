@@ -17,12 +17,21 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        // Only trigger when jumped on - uses offset of 2
+        // Only trigger when jumped on 
         if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 3.5f)))
         {
-            Debug.Log("Collision detected! Yes");
+            Debug.Log("Player killed enemy");
 
             Destroy(collision.gameObject);
+        }
+
+        else if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Player was hit by enemy");
+
+            Vector3 pos = transform.position;
+            pos.x -= 3f;
+            transform.position = pos;
         }
 
     }

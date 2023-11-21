@@ -1060,6 +1060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382573344709542927}
   - component: {fileID: 5196567718280989703}
+  - component: {fileID: 1742624541516240408}
   m_Layer: 0
   m_Name: Ground Enemy
   m_TagString: Enemy
@@ -1140,8 +1141,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1742624541516240408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009828611726139264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a980ffa78be80b746a7a1ea8298e4540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 1
+  enemySwitch: 3000
+  counter: 0
 --- !u!1 &2025369385746073586
 GameObject:
   m_ObjectHideFlags: 0
