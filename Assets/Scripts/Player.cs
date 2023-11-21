@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Only trigger when jumped on - uses offset of 2
-        if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 2f)))
+        if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 3.5f)))
         {
             Debug.Log("Collision detected! Yes");
 
