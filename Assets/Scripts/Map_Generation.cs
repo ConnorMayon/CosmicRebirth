@@ -130,6 +130,7 @@ public class Map_Generation : MonoBehaviour
         if (platformsSpawned % 20 == 0)
         {
             CreateCheckpoint();
+            isCheckpointReached = false;
         }
     }
 
