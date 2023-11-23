@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crumbling_Platform : MonoBehaviour
 {
-    public float crumblingDuration = 3f; // Time it takes for the platform to crumble
+    public float crumblingDelay = 10f; // Time before the platform gets destroyed
     private bool isCrumbling = false;
     private Renderer platformRenderer;
 
@@ -13,28 +13,24 @@ public class Crumbling_Platform : MonoBehaviour
         platformRenderer = GetComponent<Renderer>();
     }
 
-    void OnTriggerEnter(Collider other)
+void OnTriggerEnter(Collider other)
+{
+    Debug.Log("OnTriggerEnter was called with: " + other.gameObject.name);
+    if (other.CompareTag("Player") && !isCrumbling)
     {
-        if (other.CompareTag("Player") && !isCrumbling)
-        {
-            isCrumbling = true;
-            StartCoroutine(Crumble());
-        }
+        Debug.Log("Crumbling started.");
+        isCrumbling = true;
+        StartCoroutine(CrumbleAndDestroy());
     }
+}
 
-    IEnumerator Crumble()
+    IEnumerator CrumbleAndDestroy()
     {
-        float elapsedTime = 0;
-        Color originalColor = platformRenderer.material.color;
-        Color targetColor = new Color(0, 0, 0, 0); // Assuming you want to fade to transparent black
+        // Optionally fade out or change the platform's appearance
+        // Wait for the specified delay
+        yield return new WaitForSeconds(crumblingDelay);
 
-        while (elapsedTime < crumblingDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            platformRenderer.material.color = Color.Lerp(originalColor, targetColor, elapsedTime / crumblingDuration);
-            yield return null;
-        }
-
+        // Destroy the platform
         Destroy(gameObject);
     }
 }

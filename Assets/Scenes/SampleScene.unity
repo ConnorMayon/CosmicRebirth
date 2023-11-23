@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -266,6 +266,7 @@ MonoBehaviour:
   movingPlatformPrefab: {fileID: 7813123552675138319, guid: 5cd6ebbd40a4a1a41bcc970d23f6a167, type: 3}
   crumblingPlatformPrefab: {fileID: 7397582807024782110, guid: 632e79ae285928945a800f350c2ec21b, type: 3}
   checkpointPrefab: {fileID: 865949192047822221, guid: fcf7554bc3d9c2f4f97ac5da5fc98434, type: 3}
+  player: {fileID: 1192742948}
   maxVerticalOffset: 15
 --- !u!1 &963194225
 GameObject:
@@ -442,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 8376470815134347188, guid: 79052edf47f018b4ea56cf6bf912f397, type: 3}
       propertyPath: m_Name
       value: Spaceman
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376470815134347188, guid: 79052edf47f018b4ea56cf6bf912f397, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

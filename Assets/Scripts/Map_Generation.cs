@@ -9,6 +9,7 @@ public class Map_Generation : MonoBehaviour
     public GameObject movingPlatformPrefab;
     public GameObject crumblingPlatformPrefab;
     public GameObject checkpointPrefab;
+    public GameObject player;
 
     public float maxVerticalOffset; // Maximum vertical difference for floating islands
 
@@ -37,7 +38,7 @@ public class Map_Generation : MonoBehaviour
             GeneratePlatform();
             CheckForCheckpointCreation();
         }
-        else if (!isCheckpointReached && PlayerHasReachedCheckpoint())
+        else if (!isCheckpointReached && IsPlayerCloseToCheckpoint())
         {
             isCheckpointReached = true;
             ResumePlatformGeneration();
@@ -139,10 +140,14 @@ public class Map_Generation : MonoBehaviour
         nextSpawnPoint += new Vector3(StandardPlatformLength, 0, 0); // Adjust for the checkpoint
     }
 
-    bool PlayerHasReachedCheckpoint()
+    bool IsPlayerCloseToCheckpoint()
     {
-        // Implement logic to check if the player has reached the checkpoint
-        return false; // Placeholder
+        if (player != null)
+        {
+            float distanceToCheckpoint = Mathf.Abs(nextSpawnPoint.x - player.transform.position.x);
+            return distanceToCheckpoint < 50f;
+        }
+        return false;
     }
 
     void ResumePlatformGeneration()
