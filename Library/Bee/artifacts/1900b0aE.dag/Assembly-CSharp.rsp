@@ -355,6 +355,7 @@
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/CheckpointTrigger.cs"
 "Assets/Scripts/Crumbling_Platform.cs"
+"Assets/Scripts/EnemySpawner.cs"
 "Assets/Scripts/FlashingText.cs"
 "Assets/Scripts/GameTimer.cs"
 "Assets/Scripts/GroundEnemyMovement.cs"
