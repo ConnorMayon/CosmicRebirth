@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Crumbling_Platform.cs" />
     <Compile Include="Assets\Scripts\GroundEnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\CheckpointTrigger.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
