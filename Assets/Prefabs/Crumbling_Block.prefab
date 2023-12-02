@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c128485e59bffe489f744b54edd7260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crumblingDelay: 10
+  crumblingDelay: 5
 --- !u!64 &2197485354512452104
 MeshCollider:
   m_ObjectHideFlags: 0
