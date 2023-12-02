@@ -13,6 +13,11 @@ public class CheckpointTrigger : MonoBehaviour
             CountdownTimer countdownTimer = FindObjectOfType<CountdownTimer>();
             if (countdownTimer != null)
             {
+                ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+                if (scoreManager != null)
+                {
+                    scoreManager.AddScore(100); // Add 100 points for checkpoint
+                }
                 FlashMessage flashMessage = FindObjectOfType<FlashMessage>();
                 if (flashMessage != null)
                 {
