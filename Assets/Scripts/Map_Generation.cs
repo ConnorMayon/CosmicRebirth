@@ -10,6 +10,8 @@ public class Map_Generation : MonoBehaviour
     public GameObject crumblingPlatformPrefab;
     public GameObject checkpointPrefab;
     public GameObject player;
+    public GameObject checkpointTriggerPrefab;
+
 
     public float maxVerticalOffset; // Maximum vertical difference for floating islands
 
@@ -65,7 +67,7 @@ public class Map_Generation : MonoBehaviour
         // Apply vertical offset only for floating islands
         if (platformPrefab == floatingIslandPrefab)
         {
-            nextSpawnPoint.y += Random.Range(5, maxVerticalOffset);
+            nextSpawnPoint.y += Random.Range((nextSpawnPoint.y + 5), (maxVerticalOffset + nextSpawnPoint.y));
         }
         else
         {
@@ -101,7 +103,7 @@ public class Map_Generation : MonoBehaviour
             platformChoice = Random.Range(0, 4); // 4 different platform types
 
             // Check to prevent back-to-back floating islands or moving platforms
-            if ((lastPlatformWasFloatingIsland && platformChoice == 1) || // Assuming '1' corresponds to floatingIslandPrefab
+            if ( // Assuming '1' corresponds to floatingIslandPrefab
                 (lastPlatformWasMoving && platformChoice == 2))           // Assuming '2' corresponds to movingPlatformPrefab
             {
                 continue; // Re-roll if the same type of platform is selected again
@@ -136,10 +138,24 @@ public class Map_Generation : MonoBehaviour
 
     void CreateCheckpoint()
     {
-        Instantiate(checkpointPrefab, nextSpawnPoint, Quaternion.identity);
+        // Instantiate the checkpoint prefab at the next spawn point
+        GameObject checkpointInstance = Instantiate(checkpointPrefab, nextSpawnPoint, Quaternion.identity);
         isCheckpointCreated = true;
-        nextSpawnPoint += new Vector3(StandardPlatformLength, -3.27f, -5f); // Adjust for the checkpoint
+
+        // If you have a separate CheckpointTrigger prefab, instantiate it
+        if (checkpointTriggerPrefab != null)
+        {
+            // Create an offset vector, for example, 1 unit above the checkpoint
+            Vector3 triggerOffset = new Vector3(0, 0, 0);
+
+            // Instantiate the CheckpointTrigger at the adjusted position
+            Instantiate(checkpointTriggerPrefab, checkpointInstance.transform.position + triggerOffset, Quaternion.identity, checkpointInstance.transform);
+        }
+
+        // Update the next spawn point for the next platform or checkpoint
+        nextSpawnPoint += new Vector3(StandardPlatformLength, -3.27f, -5f); // Adjust based on your game's requirements
     }
+
 
     bool IsPlayerCloseToCheckpoint()
     {
