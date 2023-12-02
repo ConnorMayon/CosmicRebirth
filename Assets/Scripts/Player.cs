@@ -1,24 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private const float DeathThreshold = -10f; // Y-axis threshold for death
 
     // Update is called once per frame
     void Update()
     {
-        
+        CheckForDeath();
     }
     private void OnCollisionEnter(Collision collision)
     {
         // Only trigger when jumped on 
-        if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 3.5f)))
+        if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 2.6f)))
         {
             Debug.Log("Player killed enemy");
 
@@ -51,5 +48,25 @@ public class Player : MonoBehaviour
             transform.position = pos;
         }
 
+    }
+
+    private void CheckForDeath()
+    {
+        // Check if the player has fallen below the death threshold
+        if (transform.position.y < DeathThreshold)
+        {
+            Debug.Log("Player has fallen and died");
+
+            // Handle player death here
+            HandlePlayerDeath();
+        }
+    }
+
+
+    private void HandlePlayerDeath()
+    {
+        // Load the Game Over scene
+        // SceneManager.LoadScene("GameOver"); // Use the exact name of your game over scene
+        Debug.Log("Player Died");
     }
 }
