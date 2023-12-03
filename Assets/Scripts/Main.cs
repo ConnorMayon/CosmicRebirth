@@ -23,4 +23,10 @@ public class Main : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    // function to that goes to the tip scene
+    public void GoToTips()
+    {
+        SceneManager.LoadScene("TipsScene");
+    }
+
 }
