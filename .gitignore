@@ -69,4 +69,14 @@ crashlytics-build.properties
 
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
+<<<<<<< Updated upstream
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+=======
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+Logs/AssetImportWorker*.log
+Logs/shadercompiler-AssetImportWorker*.log
+
+Logs/AssetImportWorker*.log
+Logs/shadercompiler-AssetImportWorker*.log
+>>>>>>> Stashed changes
