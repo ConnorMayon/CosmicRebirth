@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19528377, g: 0.097322635, b: 0.1191001, a: 1}
+  m_IndirectSpecularColor: {r: 0.14485872, g: 0.067697614, b: 0.08553996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -841,6 +841,7 @@ GameObject:
   - component: {fileID: 1266408182}
   - component: {fileID: 1266408181}
   - component: {fileID: 1266408183}
+  - component: {fileID: 1266408184}
   m_Layer: 0
   m_Name: Map
   m_TagString: Platform
@@ -902,6 +903,27 @@ MonoBehaviour:
   maxSpawnRate: 0.1
   spawnRateIncrease: 0.005
   spawnDistance: 15
+--- !u!114 &1266408184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266408180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f90288cc77f3e64ab186cb95996a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 3923716082859897490, guid: 6462bf75655fa3b4282c0e2bd2de8492, type: 3}
+  - {fileID: 5264611279367211222, guid: e9242b1cf56fada4caccc9e958e3bcc6, type: 3}
+  - {fileID: 7094591744837083827, guid: 149ae9acb193e6d4fb1fb5ef9b63e3ee, type: 3}
+  player: {fileID: 1196465715}
+  minSpawnDelay: 15
+  maxSpawnDelay: 35
+  spawnDelay: 0
+  spawnDistance: 10
 --- !u!1 &1367841475
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3237901aafa93439c91a8edaad3efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skySpeed: 1
 --- !u!1 &1835228893
 GameObject:
   m_ObjectHideFlags: 0

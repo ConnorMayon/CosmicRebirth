@@ -365,6 +365,7 @@
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerMoveAuto.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/PowerupSpawner.cs"
 "Assets/Scripts/ScoreManager.cs"
 "Assets/Scripts/SkyEnemyMovement.cs"
 "Assets/Scripts/SkyManager.cs"

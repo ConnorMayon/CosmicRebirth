@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\FlashingText.cs" />
     <Compile Include="Assets\Scripts\Moving_Platform.cs" />
     <Compile Include="Assets\Scripts\Crumbling_Platform.cs" />
+    <Compile Include="Assets\Scripts\PowerupSpawner.cs" />
     <Compile Include="Assets\Scripts\GroundEnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
