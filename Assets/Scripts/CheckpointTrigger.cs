@@ -5,6 +5,12 @@ using UnityEngine;
 public class CheckpointTrigger : MonoBehaviour
 {
     public float timeToAdd = 30f; // Time to add when the checkpoint is reached
+    private Map_Generation mapGenerator;
+
+    private void Start()
+    {
+        mapGenerator = FindObjectOfType<Map_Generation>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +32,7 @@ public class CheckpointTrigger : MonoBehaviour
                 countdownTimer.AddTime(timeToAdd);
                 // Optionally, deactivate the checkpoint to prevent re-triggering
                 gameObject.SetActive(false);
+                mapGenerator.DespawnPreviousPlatforms(transform.position.x);
             }
         }
     }
