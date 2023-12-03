@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\FlashingText.cs" />
     <Compile Include="Assets\Scripts\Moving_Platform.cs" />
     <Compile Include="Assets\Scripts\Crumbling_Platform.cs" />
+    <Compile Include="Assets\Scripts\PowerupSpawner.cs" />
     <Compile Include="Assets\Scripts\GroundEnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
@@ -70,7 +71,10 @@
     <Compile Include="Assets\Scripts\CheckpointTrigger.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\SkyManager.cs" />
+    <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
     <Compile Include="Assets\Scripts\Map_Generation.cs" />
+    <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />
     <Compile Include="Assets\Scripts\GameTimer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
   </ItemGroup>
