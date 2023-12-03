@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private const float DeathThreshold = -10f; // Y-axis threshold for death
+    private bool isInvincible = false;
+
+    void Start()
+    {
+        Debug.Log("Player script is running.");
+    }
 
     // Update is called once per frame
     void Update()
@@ -15,7 +21,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Only trigger when jumped on 
-        if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 2.6f)))
+        if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 3f)))
         {
             Debug.Log("Player killed enemy");
 
@@ -27,7 +33,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if(collision.gameObject.CompareTag("Enemy"))
+        else if(collision.gameObject.CompareTag("Enemy") && !isInvincible)
         {
             Debug.Log("Player was hit by enemy");
             
@@ -47,6 +53,18 @@ public class Player : MonoBehaviour
             pos.x -= 3f;
             transform.position = pos;
         }
+        else if (collision.gameObject.CompareTag("Enemy") && isInvincible)
+        {
+            Debug.Log("Player killed enemy");
+
+            Destroy(collision.gameObject);
+            ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+            if (scoreManager != null)
+            {
+                scoreManager.AddScore(100); // Add 100 points for enemy kill
+            }
+        }
+
 
     }
 
@@ -66,7 +84,23 @@ public class Player : MonoBehaviour
     private void HandlePlayerDeath()
     {
         // Load the Game Over scene
-        // SceneManager.LoadScene("GameOver"); // Use the exact name of your game over scene
+        SceneManager.LoadScene("EndScene"); // Use the exact name of your game over scene
         Debug.Log("Player Died");
     }
+
+    public void SetInvincibility(bool invincible, float duration)
+    {
+        StartCoroutine(InvincibilityDuration(invincible, duration));
+        Debug.Log("Invincibility set to: " + invincible);
+    }
+
+    IEnumerator InvincibilityDuration(bool invincible, float duration)
+    {
+        isInvincible = invincible;
+        yield return new WaitForSeconds(duration);
+        isInvincible = false;
+    }
+
+
+
 }

@@ -55,6 +55,6 @@ public class CountdownTimer : MonoBehaviour
     void EndGame()
     {
         // Load game over scene or any game over logic
-       // SceneManager.LoadScene("GameOverScene"); // Replace with your game over scene name
+        SceneManager.LoadScene("EndScene");
     }
 }
