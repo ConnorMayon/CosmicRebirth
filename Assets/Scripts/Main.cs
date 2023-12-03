@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // function to start the game
     public void StartGame()
     {
@@ -27,6 +15,14 @@ public class Main : MonoBehaviour
     public void GoToTips()
     {
         SceneManager.LoadScene("TipsScene");
+    
+    
+    }
+
+    // function to that goes to the start scene
+    public void LoadStart()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 
 }
