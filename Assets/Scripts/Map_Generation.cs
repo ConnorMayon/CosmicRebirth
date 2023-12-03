@@ -96,7 +96,7 @@ public class Map_Generation : MonoBehaviour
         lastPlatformWasFloatingIsland = platformPrefab == floatingIslandPrefab;
         lastTwoPlatformsWereFloatingIsland = lastPlatformWasFloatingIsland && (platformPrefab == floatingIslandPrefab);
         lastPlatformWasMoving = platformPrefab == movingPlatformPrefab;
-        lastPlatformwasCrumbling  = platformPrefab == crumblingPlatformPrefab;
+        lastPlatformWasCrumbling  = platformPrefab == crumblingPlatformPrefab;
     }
 
     GameObject ChoosePlatformPrefab()
