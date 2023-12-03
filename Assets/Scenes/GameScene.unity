@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.07118303, g: 0.025279634, b: 0.037989598, a: 1}
+  m_IndirectSpecularColor: {r: 0.2843041, g: 0.2843041, b: 0.2843041, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1008,6 +1008,9 @@ MonoBehaviour:
   checkpointPrefab: {fileID: 865949192047822221, guid: fcf7554bc3d9c2f4f97ac5da5fc98434, type: 3}
   player: {fileID: 1196465715}
   checkpointTriggerPrefab: {fileID: 1841732328940481078, guid: caf5395c47deaaa4180f5a01cb4430b8, type: 3}
+  winterStaticPlatformPrefab: {fileID: 3251832895809388978, guid: 8cb671d0cd8b802409efab8bbdf99516, type: 3}
+  factoryStaticPlatformPrefab: {fileID: 3251832895809388978, guid: 860be88a0e8f975418697dd49854529a, type: 3}
+  cityStaticPlatformPrefab: {fileID: 3251832895809388978, guid: b381fdb719ef8a5419059337fdc9fb24, type: 3}
   maxVerticalOffset: 6
 --- !u!4 &1266408182
 Transform:
@@ -1052,18 +1055,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1266408180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f90288cc77f3e64ab186cb95996a7d9, type: 3}
+  m_Script: {fileID: 11500000, guid: ed9f47523c12f09479bb43ed1018b800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUps:
-  - {fileID: 3923716082859897490, guid: 6462bf75655fa3b4282c0e2bd2de8492, type: 3}
-  - {fileID: 5264611279367211222, guid: e9242b1cf56fada4caccc9e958e3bcc6, type: 3}
-  - {fileID: 7094591744837083827, guid: 149ae9acb193e6d4fb1fb5ef9b63e3ee, type: 3}
-  player: {fileID: 1196465715}
-  minSpawnDelay: 15
-  maxSpawnDelay: 35
-  spawnDelay: 0
-  spawnDistance: 10
 --- !u!1 &1367841475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3237901aafa93439c91a8edaad3efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skySpeed: 1
 --- !u!82 &1390218823
 AudioSource:
   m_ObjectHideFlags: 0

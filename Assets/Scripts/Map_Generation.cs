@@ -12,6 +12,10 @@ public class Map_Generation : MonoBehaviour
     public GameObject player;
     public GameObject checkpointTriggerPrefab;
 
+    public GameObject winterStaticPlatformPrefab;
+    public GameObject factoryStaticPlatformPrefab;
+    public GameObject cityStaticPlatformPrefab;
+
     public float maxVerticalOffset; // Maximum vertical difference for floating islands
 
     private Vector3 nextSpawnPoint = new Vector3(5.21f, -3.27f, -5f);
@@ -70,6 +74,7 @@ public class Map_Generation : MonoBehaviour
         }
 
         GameObject newPlatform = Instantiate(platformPrefab, nextSpawnPoint, Quaternion.identity);
+
         spawnedPlatforms.Add(newPlatform);
 
         float additionalMoveDistance = 0f;
@@ -104,9 +109,21 @@ public class Map_Generation : MonoBehaviour
             break;
         } while (true);
 
+        print("Test");
+
         switch (platformChoice)
         {
-            case 0: return staticPlatformPrefab;
+            case 0:
+                switch (Themes.getTheme())
+                {
+                    case 0: return staticPlatformPrefab;
+                    case 1: return winterStaticPlatformPrefab;
+                    case 2: return factoryStaticPlatformPrefab;
+                    case 3: return cityStaticPlatformPrefab;
+                }
+
+                return staticPlatformPrefab;
+
             case 1: return floatingIslandPrefab;
             case 2: return movingPlatformPrefab;
             case 3: return crumblingPlatformPrefab;
@@ -119,6 +136,7 @@ public class Map_Generation : MonoBehaviour
         if (platformsSpawned % 20 == 0)
         {
             CreateCheckpoint();
+            Themes.switchTheme();
             isCheckpointReached = false;
         }
     }
