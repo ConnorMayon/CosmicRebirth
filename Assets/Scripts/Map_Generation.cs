@@ -47,6 +47,7 @@ public class Map_Generation : MonoBehaviour
         else if (!isCheckpointReached && IsPlayerCloseToCheckpoint())
         {
             isCheckpointReached = true;
+            Themes.themes.updateCurrentTheme();
             ResumePlatformGeneration();
         }
     }
@@ -116,8 +117,6 @@ public class Map_Generation : MonoBehaviour
 
             break;
         } while (true);
-
-        print("Test");
 
         switch (platformChoice)
         {

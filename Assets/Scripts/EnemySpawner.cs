@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject groundEnemyPrefab;
     public GameObject skyEnemyPrefab;
+    public GameObject snowmanPrefab;
+    public GameObject robotPrefab;
+    public GameObject dronePrefab;
     public GameObject player;
     public float initialSpawnDelay = 10; // Initial time between spawns
     public float maxSpawnRate = 0.1f; // Corresponds to 90% spawn rate
@@ -40,7 +44,64 @@ public class EnemySpawner : MonoBehaviour
         if (player == null) return;
 
         // Randomly choose enemy type to spawn
-        GameObject enemyPrefab = Random.Range(0, 2) == 0 ? groundEnemyPrefab : skyEnemyPrefab;
+        GameObject enemyPrefab = null;
+
+        switch (Random.Range(0, 2))
+        {
+            case 0:
+                switch (Random.Range(0, 2))
+                {
+                    case 0: 
+                        enemyPrefab = groundEnemyPrefab;
+                        break;
+                    case 1:
+                        switch (Themes.getCurrentTheme())
+                        {
+                            case 0:
+                                enemyPrefab = groundEnemyPrefab;
+                                break;
+                            case 1:
+                                enemyPrefab = snowmanPrefab; 
+                                break;
+                            case 2:
+                                enemyPrefab = robotPrefab;
+                                break;
+                            case 3:
+                                enemyPrefab = groundEnemyPrefab;
+                                break;
+                        }
+                        break;
+                }
+                break;
+
+            case 1:
+                switch (Random.Range(0, 2))
+                {
+                    case 0:
+                        enemyPrefab = skyEnemyPrefab;
+                        break;
+                    case 1:
+                        switch (Themes.getCurrentTheme())
+                        {
+                            case 0:
+                                enemyPrefab = skyEnemyPrefab;
+                                break;
+                            case 1:
+                                enemyPrefab = skyEnemyPrefab;
+                                break;
+                            case 2:
+                                enemyPrefab = skyEnemyPrefab;
+                                break;
+                            case 3:
+                                enemyPrefab = dronePrefab;
+                                break;
+                        }
+                        break;
+                }
+                break;
+
+        }
+
 
         // Calculate spawn position in front of the player along the X-axis
         Vector3 spawnDirection = player.transform.right; // Assuming the player's right is the forward direction along the X-axis

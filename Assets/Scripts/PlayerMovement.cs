@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
         // set platform tag to true
         isPlatform = true;
-    }
+    } 
 
     // Update is called once per frame
     void Update()

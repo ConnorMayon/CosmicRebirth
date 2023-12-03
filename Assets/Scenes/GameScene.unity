@@ -1041,6 +1041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundEnemyPrefab: {fileID: 2009828611726139264, guid: 231a7601ae915574d81f21d4b1f65d78, type: 3}
   skyEnemyPrefab: {fileID: 2039308925435716673, guid: 97f1ca55708772d498aa3f4fc924c443, type: 3}
+  snowmanPrefab: {fileID: 5374519019643085652, guid: cc6a6d8bb0104084c8c0cf617d16361a, type: 3}
+  robotPrefab: {fileID: 8855073619222582720, guid: 7bbb50bd8ea569d4a9dd4d9230ab00f6, type: 3}
+  dronePrefab: {fileID: 5830495476693578202, guid: bf6528857f6b4c747aacd548d3f612c6, type: 3}
   player: {fileID: 1196465715}
   initialSpawnDelay: 10
   maxSpawnRate: 0.1
@@ -1058,6 +1061,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9f47523c12f09479bb43ed1018b800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mat_Standard: {fileID: 2100000, guid: 8401881fcb9afd34eb383fc90bbbbddc, type: 2}
+  Mat_Winter: {fileID: 2100000, guid: 2356ad80b3aaa1642adf2f8f9821bd90, type: 2}
+  Mat_Factory: {fileID: 2100000, guid: 44ba0776c41871d478027e93032cf8b1, type: 2}
+  Mat_City: {fileID: 2100000, guid: 97cf7f9acdf93254b87cbb0e6ee4c0c3, type: 2}
 --- !u!1 &1367841475
 GameObject:
   m_ObjectHideFlags: 0
