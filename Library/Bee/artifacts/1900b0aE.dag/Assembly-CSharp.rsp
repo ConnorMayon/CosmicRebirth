@@ -367,7 +367,7 @@
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/ScoreManager.cs"
 "Assets/Scripts/SkyEnemyMovement.cs"
-"Assets/SkyManager.cs"
+"Assets/Scripts/SkyManager.cs"
 "Assets/SpaceSkies Free/Demo/Scripts/LookCamera.cs"
 "Assets/SpaceSkies Free/Demo/Scripts/SkyboxChanger.cs"
 -langversion:9.0
