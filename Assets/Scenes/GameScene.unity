@@ -1061,6 +1061,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9f47523c12f09479bb43ed1018b800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mat_Standard: {fileID: 2100000, guid: 8401881fcb9afd34eb383fc90bbbbddc, type: 2}
+  Mat_Winter: {fileID: 2100000, guid: 2356ad80b3aaa1642adf2f8f9821bd90, type: 2}
+  Mat_Factory: {fileID: 2100000, guid: 44ba0776c41871d478027e93032cf8b1, type: 2}
+  Mat_City: {fileID: 2100000, guid: 97cf7f9acdf93254b87cbb0e6ee4c0c3, type: 2}
 --- !u!1 &1367841475
 GameObject:
   m_ObjectHideFlags: 0
