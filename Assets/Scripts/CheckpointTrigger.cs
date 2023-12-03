@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointTrigger : MonoBehaviour
 {
-    public float timeToAdd = 30f; // Time to add when the checkpoint is reached
+    public float timeToAdd = 90f; // Time to add when the checkpoint is reached
     private Map_Generation mapGenerator;
 
     private void Start()
