@@ -25,7 +25,9 @@ public class Map_Generation : MonoBehaviour
     private bool isCheckpointCreated = false;
     private bool isCheckpointReached = false;
     private bool lastPlatformWasMoving = false;
+    private bool lastPlatformWasCrumbling = false;
     private bool lastPlatformWasFloatingIsland = false;
+    private bool lastTwoPlatformsWereFloatingIsland = false;
 
     private GameObject lastCheckpoint;
     private const float StandardPlatformLength = 2 * 7.7596f;
@@ -91,7 +93,9 @@ public class Map_Generation : MonoBehaviour
         platformsSpawned++;
 
         lastPlatformWasFloatingIsland = platformPrefab == floatingIslandPrefab;
+        lastTwoPlatformsWereFloatingIsland = lastPlatformWasFloatingIsland && (platformPrefab == floatingIslandPrefab);
         lastPlatformWasMoving = platformPrefab == movingPlatformPrefab;
+        lastPlatformwasCrumbling  = platformPrefab == crumblingPlatformPrefab;
     }
 
     GameObject ChoosePlatformPrefab()
@@ -101,7 +105,11 @@ public class Map_Generation : MonoBehaviour
         {
             platformChoice = Random.Range(0, 4);
 
-            if ((lastPlatformWasMoving && platformChoice == 2))
+            if (((lastPlatformWasMoving || lastPlatformWasCrumbling ) && platformChoice == 2))
+            {
+                continue;
+            }
+            if (lastTwoPlatformsWereFloatingIsland && platformChoice == 1)
             {
                 continue;
             }
