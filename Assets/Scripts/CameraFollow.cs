@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
         S = this;
         camHeight = Camera.main.orthographicSize;
         camWidth = Camera.main.aspect * camHeight;
-        pos.y = transform.position.y;
+        pos.y = 5;
         pos.z = transform.position.z;
     }
     
@@ -32,7 +32,7 @@ public class CameraFollow : MonoBehaviour
         if(player.transform.position.x > transform.position.x - camWidth / 2) 
         {
             pos.x = player.transform.position.x + camWidth / 2;
-            pos.y = player.transform.position.y + camHeight / 20;
+            //pos.y = player.transform.position.y + camHeight / 20;
             transform.position = pos;
         }
     }
