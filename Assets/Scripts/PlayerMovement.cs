@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     bool isPlatform;
-    float horMovMult = 5f;
+    float horMovMult = 30f;
     float verMovMult = 8f;
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
         // set platform tag to true
         isPlatform = true;
-    }
+    } 
 
     // Update is called once per frame
     void Update()

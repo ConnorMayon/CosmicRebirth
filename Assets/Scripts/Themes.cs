@@ -5,7 +5,8 @@ using UnityEngine;
 public class Themes : MonoBehaviour
 {
 
-    private static int themeChoice = 0;
+    private static int nextTheme = 0;
+    private static int currentTheme = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,23 @@ public class Themes : MonoBehaviour
 
     public static int getTheme()
     {
-        return themeChoice;
+        return nextTheme;
+    }
+
+    public static int getCurrentTheme()
+    {
+        return currentTheme;
+    }
+
+    public static void updateCurrentTheme()
+    {
+        currentTheme = nextTheme;
     }
 
     public static void switchTheme()
     {
-        themeChoice = Random.Range(0, 3);
+        //nextTheme = Random.Range(0, 4);
+        nextTheme = 2;
     }
+
 }

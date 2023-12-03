@@ -1041,6 +1041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundEnemyPrefab: {fileID: 2009828611726139264, guid: 231a7601ae915574d81f21d4b1f65d78, type: 3}
   skyEnemyPrefab: {fileID: 2039308925435716673, guid: 97f1ca55708772d498aa3f4fc924c443, type: 3}
+  snowmanPrefab: {fileID: 5374519019643085652, guid: cc6a6d8bb0104084c8c0cf617d16361a, type: 3}
+  robotPrefab: {fileID: 8855073619222582720, guid: 7bbb50bd8ea569d4a9dd4d9230ab00f6, type: 3}
+  dronePrefab: {fileID: 5830495476693578202, guid: bf6528857f6b4c747aacd548d3f612c6, type: 3}
   player: {fileID: 1196465715}
   initialSpawnDelay: 10
   maxSpawnRate: 0.1
