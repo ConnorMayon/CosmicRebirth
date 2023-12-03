@@ -8,7 +8,7 @@ public class Main : MonoBehaviour
     // function to start the game
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 
     // function to that goes to the tip scene

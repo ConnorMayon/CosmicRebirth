@@ -45,6 +45,7 @@ public class PowerupSpawner : MonoBehaviour
         // find spawn position
         Vector3 spawnDirection = player.transform.right;
         Vector3 spawnPosition = player.transform.position + spawnDirection * spawnDistance;
+        spawnPosition.z = player.transform.position.z;
 
         // spawn powerup
         Instantiate(randomPowerUp, spawnPosition, Quaternion.identity);
