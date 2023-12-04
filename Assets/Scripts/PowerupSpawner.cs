@@ -6,8 +6,8 @@ public class PowerupSpawner : MonoBehaviour
 {
     public GameObject[] powerUps; // array of powerups
     public GameObject player;
-    private float minSpawnDelay = 5f;
-    private float maxSpawnDelay = 10f;
+    private float minSpawnDelay = 25f;
+    private float maxSpawnDelay = 35f;
     public float spawnDelay = 0f;
     public float spawnDistance = 10f; // distance in front of player to spawn powerups
 

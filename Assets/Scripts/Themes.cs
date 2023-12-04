@@ -9,6 +9,9 @@ public class Themes : MonoBehaviour
     public Material Mat_Factory;
     public Material Mat_City;
 
+    public GameObject player;
+    public GameObject snowParticleSystem;
+
     private static int nextTheme = 0;
     private static int currentTheme = 0;
     private static int oldTheme = 0;
@@ -19,6 +22,10 @@ public class Themes : MonoBehaviour
     void Start()
     {
         themes = this;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        player.transform.GetChild(6).GetComponent<ParticleSystem>().Pause();
     }
 
     // Update is called once per frame
@@ -57,6 +64,7 @@ public class Themes : MonoBehaviour
         {
             nextTheme = Random.Range(0, 4);
         }
+
     }
 
     public void updateSky()
@@ -65,18 +73,32 @@ public class Themes : MonoBehaviour
         switch (oldTheme)
         {
             case 0:
+                stopSnow();
                 RenderSettings.skybox = Mat_Standard;
                 break;
             case 1:
+                startSnow();
                 RenderSettings.skybox = Mat_Winter;
                 break;
             case 2:
+                stopSnow();
                 RenderSettings.skybox = Mat_Factory;
                 break;
             case 3:
+                stopSnow();
                 RenderSettings.skybox = Mat_City;
                 break;
         }
+    }
+
+    public void startSnow()
+    {
+        player.transform.GetChild(6).GetComponent<ParticleSystem>().Play();
+    }
+
+    public void stopSnow()
+    {
+        player.transform.GetChild(6).GetComponent<ParticleSystem>().Pause();
     }
 
 }
