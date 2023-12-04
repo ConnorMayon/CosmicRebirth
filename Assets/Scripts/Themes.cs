@@ -11,6 +11,7 @@ public class Themes : MonoBehaviour
 
     private static int nextTheme = 0;
     private static int currentTheme = 0;
+    private static int oldTheme = 0;
 
     public static Themes themes;
 
@@ -36,9 +37,32 @@ public class Themes : MonoBehaviour
         return currentTheme;
     }
 
+    // Triggered after hitting checkpoint
     public void updateCurrentTheme()
     {
-        switch (nextTheme)
+        Debug.Log("Theme updated to: " + nextTheme);
+
+        currentTheme = nextTheme;
+    }
+
+    public static void switchTheme()
+    {
+        Debug.Log("Setting next theme");
+        oldTheme = currentTheme;
+
+        nextTheme = Random.Range(0, 4);
+
+        // Stops repeat themes to create a better experience
+        while (nextTheme == currentTheme)
+        {
+            nextTheme = Random.Range(0, 4);
+        }
+    }
+
+    public void updateSky()
+    {
+        // Switches the skybox depending on theme
+        switch (oldTheme)
         {
             case 0:
                 RenderSettings.skybox = Mat_Standard;
@@ -53,15 +77,6 @@ public class Themes : MonoBehaviour
                 RenderSettings.skybox = Mat_City;
                 break;
         }
-
-        Debug.Log("Theme updated to: " + nextTheme);
-
-        currentTheme = nextTheme;
-    }
-
-    public static void switchTheme()
-    {
-        nextTheme = Random.Range(0, 4);
     }
 
 }

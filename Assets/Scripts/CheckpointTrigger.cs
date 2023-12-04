@@ -35,7 +35,7 @@ public class CheckpointTrigger : MonoBehaviour
                 mapGenerator.DespawnPreviousPlatforms(transform.position.x);
 
                 // Switch the aesthetic theme - map will already generate with theme-specific enemies and platforms
-                Themes.themes.updateCurrentTheme();
+                Themes.themes.updateSky();
 
             }
         }

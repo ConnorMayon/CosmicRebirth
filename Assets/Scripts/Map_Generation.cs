@@ -45,6 +45,7 @@ public class Map_Generation : MonoBehaviour
         else if (!isCheckpointReached && IsPlayerCloseToCheckpoint())
         {
             isCheckpointReached = true;
+            Themes.themes.updateCurrentTheme();
             ResumePlatformGeneration();
         }
     }
@@ -133,8 +134,8 @@ public class Map_Generation : MonoBehaviour
     {
         if (platformsSpawned % 20 == 0)
         {
-            CreateCheckpoint();
             Themes.switchTheme();
+            CreateCheckpoint();
             isCheckpointReached = false;
         }
     }
