@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class GroundEnemyMovement : MonoBehaviour
 {
-    public float enemySpeed = 1f;
-    public float maxSpeed = 5f; // Maximum speed
-    public float speedIncrease = 0.2f; // Speed increase per second
-    public float switchProbability = 0.01f; // Probability to switch direction each frame
+    private float enemySpeed = 2f;
+    private float maxSpeed = 6f; // Maximum speed
+    private float speedIncrease = 0.2f; // Speed increase per second
+    private float switchProbability = 0.001f; // Probability to switch direction each frame
 
     // Update is called once per frame
     void Update()

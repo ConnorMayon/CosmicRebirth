@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
             }
 
             Vector3 pos = transform.position;
-            pos.x -= 3f;
+            pos.x -= 1.8f;
             transform.position = pos;
         }
         else if (collision.gameObject.CompareTag("Enemy") && isInvincible)

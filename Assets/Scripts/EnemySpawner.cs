@@ -108,7 +108,7 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = player.transform.position + spawnDirection * spawnDistance;
 
         // Set Y to be the same as the ground enemy's Y, adjust if needed for sky enemies
-        spawnPosition.y = groundEnemyPrefab.transform.position.y;
+        spawnPosition.y = groundEnemyPrefab.transform.position.y + 1;
         spawnPosition.z = player.transform.position.z - 1;
 
         // Instantiate the enemy at the calculated position
