@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
         // Only trigger when jumped on 
         if (collision.gameObject.CompareTag("Enemy") && (transform.position.y > (collision.transform.position.y + 3f)))
         {
-            Debug.Log("Player killed enemy");
-
             Destroy(collision.gameObject);
             ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
             if (scoreManager != null)
@@ -35,8 +33,6 @@ public class Player : MonoBehaviour
 
         else if(collision.gameObject.CompareTag("Enemy") && !isInvincible)
         {
-            Debug.Log("Player was hit by enemy");
-            
             CountdownTimer countdownTimer = FindObjectOfType<CountdownTimer>();
             float timeToAdd = -5;
             if (countdownTimer != null)
@@ -55,8 +51,6 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy") && isInvincible)
         {
-            Debug.Log("Player killed enemy");
-
             Destroy(collision.gameObject);
             ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
             if (scoreManager != null)

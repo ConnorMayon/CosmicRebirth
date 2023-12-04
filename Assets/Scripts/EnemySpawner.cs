@@ -109,7 +109,7 @@ public class EnemySpawner : MonoBehaviour
 
         // Set Y to be the same as the ground enemy's Y, adjust if needed for sky enemies
         spawnPosition.y = groundEnemyPrefab.transform.position.y;
-        spawnPosition.z = player.transform.position.z;
+        spawnPosition.z = player.transform.position.z - 1;
 
         // Instantiate the enemy at the calculated position
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
