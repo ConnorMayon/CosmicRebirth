@@ -982,6 +982,7 @@ GameObject:
   - component: {fileID: 1266408181}
   - component: {fileID: 1266408183}
   - component: {fileID: 1266408184}
+  - component: {fileID: 1266408185}
   m_Layer: 0
   m_Name: Map
   m_TagString: Platform
@@ -1065,6 +1066,27 @@ MonoBehaviour:
   Mat_Winter: {fileID: 2100000, guid: 2356ad80b3aaa1642adf2f8f9821bd90, type: 2}
   Mat_Factory: {fileID: 2100000, guid: 44ba0776c41871d478027e93032cf8b1, type: 2}
   Mat_City: {fileID: 2100000, guid: 97cf7f9acdf93254b87cbb0e6ee4c0c3, type: 2}
+--- !u!114 &1266408185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266408180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f90288cc77f3e64ab186cb95996a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 3923716082859897490, guid: 6462bf75655fa3b4282c0e2bd2de8492, type: 3}
+  - {fileID: 5264611279367211222, guid: e9242b1cf56fada4caccc9e958e3bcc6, type: 3}
+  - {fileID: 7094591744837083827, guid: 149ae9acb193e6d4fb1fb5ef9b63e3ee, type: 3}
+  player: {fileID: 1196465715}
+  minSpawnDelay: 15
+  maxSpawnDelay: 35
+  spawnDelay: 1
+  spawnDistance: 10
 --- !u!1 &1367841475
 GameObject:
   m_ObjectHideFlags: 0

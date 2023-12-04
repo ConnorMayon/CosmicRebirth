@@ -8,6 +8,8 @@ public class PowerUpInvincibility : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Granted Invincibility for 10 seconds");
+
         Player playerScript = null;
 
         if (other.CompareTag("Player"))

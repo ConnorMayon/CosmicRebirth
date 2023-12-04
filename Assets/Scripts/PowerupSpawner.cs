@@ -6,8 +6,8 @@ public class PowerupSpawner : MonoBehaviour
 {
     public GameObject[] powerUps; // array of powerups
     public GameObject player;
-    public float minSpawnDelay = 15f;
-    public float maxSpawnDelay = 35f;
+    private float minSpawnDelay = 5f;
+    private float maxSpawnDelay = 10f;
     public float spawnDelay = 0f;
     public float spawnDistance = 10f; // distance in front of player to spawn powerups
 
@@ -39,6 +39,8 @@ public class PowerupSpawner : MonoBehaviour
 
     void SpawnPowerup()
     {
+        Debug.Log("Spawned powerup");
+
         // randomly select a powerup from the array
         GameObject randomPowerUp = powerUps[Random.Range(0, powerUps.Length)];
 

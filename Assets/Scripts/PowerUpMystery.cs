@@ -25,12 +25,15 @@ public class PowerUpMystery : MonoBehaviour
             switch (randomEffect)
             {
                 case 0:
+                    Debug.Log("Mystery powerup: Added time");
                     AddTime();
                     break;
                 case 1:
+                    Debug.Log("Mystery powerup: Invincibility");
                     GrantInvincibility();
                     break;
                 case 2:
+                    Debug.Log("Mystery powerup: Spawned Enemy");
                     SpawnEnemy();
                     break;
             }

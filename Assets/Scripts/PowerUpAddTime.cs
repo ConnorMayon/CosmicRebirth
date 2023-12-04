@@ -8,6 +8,8 @@ public class PowerUpAddTime : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Added 30 seconds of time");
+
         if (other.gameObject.CompareTag("Player"))
         {
             // Add time logic
