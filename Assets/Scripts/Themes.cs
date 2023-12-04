@@ -54,6 +54,8 @@ public class Themes : MonoBehaviour
                 break;
         }
 
+        Debug.Log("Theme updated to: " + nextTheme);
+
         currentTheme = nextTheme;
     }
 

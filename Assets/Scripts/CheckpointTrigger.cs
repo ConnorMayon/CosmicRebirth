@@ -33,6 +33,10 @@ public class CheckpointTrigger : MonoBehaviour
                 // Optionally, deactivate the checkpoint to prevent re-triggering
                 gameObject.SetActive(false);
                 mapGenerator.DespawnPreviousPlatforms(transform.position.x);
+
+                // Switch the aesthetic theme - map will already generate with theme-specific enemies and platforms
+                Themes.themes.updateCurrentTheme();
+
             }
         }
     }
